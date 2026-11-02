@@ -70,9 +70,10 @@ Examples: EC2, S3, RDS.
 
 A reusable group of infrastructure resources.
 
-**Example:** Grouping EC2 and Security Group configurations into one module.
-**Example:** "Database" module might include primary instances, replicas, keys, roles, route tables
-**Example:** "Serverless" module might include lambda code, api gateway configuration, and roles
+**Example:**
+- Grouping EC2 and Security Group configurations into one module.
+- "Database" module might include primary instances, replicas, keys, roles, route tables.
+- "Serverless" module might include lambda code, API gateway configuration, and roles.
 
 **Remember:** Module = Reusable resources.
 
