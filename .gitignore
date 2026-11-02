@@ -1,0 +1,17 @@
+# OpenTofu / Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+
+# Sensitive files
+*.tfvars
+*.auto.tfvars
+.env
+.env.*
+
+# Mac
+.DS_Store
