@@ -24,5 +24,5 @@ We are creating a local text file using OpenTofu.
 
 resource "local_file" "main" {
   content  = "This is my learning example of file creation using local testing."
-  filename = "${path.module}/example.txt"
+  filename = "${path.module}/output_files/example.txt"
 }
