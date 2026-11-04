@@ -4,6 +4,7 @@ variable "greeting" {
   type    = string
   description="How to greet the folks" // description documents the purpose of a variable so developers can understand its usage without affecting its behaviour.
 }
+// variables we can pass from CLI, tfvars file, as commad as well
 
 resource "local_file" "main1" {
   content  = "${var.greeting}, welcome to tofu variable class."
