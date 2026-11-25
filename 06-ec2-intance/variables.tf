@@ -1,11 +1,11 @@
 variable "region" {
-  type = string
+  type        = string
   description = "The region to deploy the resources"
-  default = "ap-southeast-2"
+  default     = "ap-southeast-2"
 }
 
 variable "name_prefix" {
-  type = string
+  type        = string
   description = "a default name prefix to be added"
-  default = "opentofu-aws-practice"
+  default     = "opentofu-aws-practice"
 }

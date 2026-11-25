@@ -11,8 +11,8 @@ provider "aws" {
   region = var.region
 
   default_tags {
-    tags={
-      demo="opentofu-ec2-instance-creation-practice"
+    tags = {
+      demo = "opentofu-ec2-instance-creation-practice"
     }
   }
 }
