@@ -55,15 +55,21 @@ data "aws_ami" "al2023" {
   }
 }
 
+locals {
+  memoery_to_instance_type={
+    1="t2.micro",
+  }
+}
+
 resource "aws_instance" "test_instance" {
   ami                         = data.aws_ami.al2023.id
-  instance_type               = "t3.micro"
+  instance_type               = local.memoery_to_instance_type[var.instance_minimum_memory]
   associate_public_ip_address = true
-  
-  vpc_security_group_ids = [aws_security_group.test_sg.id]
-  key_name = aws_key_pair.this.key_name
 
- user_data = <<-EOF
+  vpc_security_group_ids = [aws_security_group.test_sg.id]
+  key_name               = aws_key_pair.ssh.key_name
+
+  user_data = <<-EOF
         #!/bin/bash
         dnf update -y
         dnf install docker -y
@@ -83,7 +89,7 @@ resource "tls_private_key" "this" {
 
 }
 
-resource "aws_key_pair" "this" {
+resource "aws_key_pair" "ssh" {
   key_name   = "${var.name_prefix}_ssh"
   public_key = tls_private_key.this.public_key_openssh
 }

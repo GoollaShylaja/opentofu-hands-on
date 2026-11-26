@@ -29,7 +29,7 @@ output "ssh_command" {
   description = "SSH command for the lazy"
   value       = <<-EOF
     tofu output -raw private_key > key.pem
-    chmod 0600 key.pem
-    ssh -i key.pem ec2-user@${aws_instance.test_instance.public_ip}
+    && chmod 0600 key.pem
+    && ssh -i key.pem ec2-user@${aws_instance.test_instance.public_ip}
   EOF
 }
